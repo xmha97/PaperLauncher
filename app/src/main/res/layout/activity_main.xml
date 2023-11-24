@@ -15,9 +15,9 @@
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
-        android:layout_height="132dp"
+        android:layout_height="31dp"
         android:layout_weight="1"
-        android:text="Settings"
-        android:onClick="buttonClick" />
+        android:onClick="buttonClick"
+        android:text="Test Menu" />
 
 </LinearLayout>
