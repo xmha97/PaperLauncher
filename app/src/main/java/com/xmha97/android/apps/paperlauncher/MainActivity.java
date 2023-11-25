@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
         dlgAlert.setMessage("Runnable Packages:\n" + mylist1 + "\nUnrunable Packages:\n" + mylist2);
         dlgAlert.setTitle("Packages");
-        dlgAlert.setPositiveButton(android.R.string.yes, null);
+        dlgAlert.setPositiveButton(android.R.string.ok, null);
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
     }
