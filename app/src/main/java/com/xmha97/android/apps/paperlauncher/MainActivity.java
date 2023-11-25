@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
         dlgAlert.setMessage("Runnable Packages:\n" + mylist1 + "\nUnrunable Packages:\n" + mylist2);
         dlgAlert.setTitle("Packages");
-        dlgAlert.setPositiveButton("OK", null);
+        dlgAlert.setPositiveButton(android.R.string.yes, null);
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
     }
@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
     public void buttonClick(View v) {
         new AlertDialog.Builder(this)
                 .setTitle("Testing")
-                .setMessage("Press Yes to open the Settings app\nPress No to get a list of installed apps.")
+                .setMessage("Press Yes to open the Settings app\nPress cancel to get a list of installed apps.")
                 .setPositiveButton(android.R.string.yes, (dialog, which) -> openSettings(this))
                 .setNegativeButton(android.R.string.no, (dialog, which) -> getApps())
                 .setIcon(android.R.drawable.ic_dialog_alert)
