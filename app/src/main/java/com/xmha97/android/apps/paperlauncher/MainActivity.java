@@ -1,30 +1,68 @@
 package com.xmha97.android.apps.paperlauncher;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
-import java.util.ArrayList;
 import java.util.List;
 import android.content.pm.ResolveInfo;
+import android.widget.TextView;
+import android.os.Bundle;
+import android.os.Handler;
+import android.widget.TextView;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends Activity {
+
+    private TextView clockTextView;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        clockTextView = findViewById(R.id.clockTextView);
+        handler = new Handler();
+
+        handler.postDelayed(updateClockRunnable, 1000);
+    }
+
+    private Runnable updateClockRunnable = new Runnable() {
+        @Override
+        public void run() {
+            updateClock();
+            // دوباره اجرای متد updateClock() هر یک ثانیه یکبار
+            handler.postDelayed(this, 1000);
+        }
+    };
+
+    private void updateClock() {
+        // دریافت تاریخ و زمان فعلی
+        Date currentTime = new Date();
+        // تعیین قالب زمان برای نمایش به صورت ۲۴ ساعته
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        // تبدیل تاریخ به رشته بر اساس قالب مورد نظر
+        String formattedTime = dateFormat.format(currentTime);
+        // نمایش زمان در TextView
+        clockTextView.setText(formattedTime);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // حذف تمام Callback ها و اجرایی های انجام نشده از Handler
+        handler.removeCallbacksAndMessages(null);
     }
 
     public static void openSettings(Context context) {
@@ -37,19 +75,19 @@ public class MainActivity extends Activity {
     public void getApps() {
         final PackageManager pm = getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
-        String mylist1 = "";
-        String mylist2 = "";
+        String MyList1 = "";
+        String MyList2 = "";
         for (ApplicationInfo packageInfo : packages)
         {
             if (hasLauncherIntent(this,packageInfo.packageName)) {
-                mylist1 += packageInfo.packageName + "\n";
+                MyList1 = MyList1 + packageInfo.packageName + "\n";
             }
             else {
-                mylist2 += packageInfo.packageName + "\n";
+                MyList2 = MyList2 + packageInfo.packageName + "\n";
             }
         }
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-        dlgAlert.setMessage("Runnable Packages:\n" + mylist1 + "\nUnrunable Packages:\n" + mylist2);
+        dlgAlert.setMessage("Applicable Packages:" + "\n" + MyList1 + "\n" + "Inapplicable Packages:\n" + MyList2);
         dlgAlert.setTitle("Packages");
         dlgAlert.setPositiveButton(android.R.string.ok, null);
         dlgAlert.setCancelable(true);
@@ -82,5 +120,4 @@ public class MainActivity extends Activity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
 }

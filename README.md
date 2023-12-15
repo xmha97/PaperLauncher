@@ -8,6 +8,6 @@ A launcher for e-ink devices
 [![wakatime](https://wakatime.com/badge/user/93f6367f-6e10-4036-a84d-bbc47f9b1fcd/project/018bfddc-63c1-4f76-bbc7-660edb5e49a8.svg)](https://wakatime.com/badge/user/93f6367f-6e10-4036-a84d-bbc47f9b1fcd/project/018bfddc-63c1-4f76-bbc7-660edb5e49a8)
 
 ## Screenshots
-|Main Screen|Menu Items|Toolbar Configuration|
-|----|----|----|
-|<img src="https://user-images.githubusercontent.com/4084738/216380150-dbac589a-175e-4ae6-9776-7cd0b219ae43.png" width="200"/>|<img src="https://user-images.githubusercontent.com/4084738/216380448-9b226f37-c30c-49fd-8242-3291bf82eaab.png" width="200"/>|<img src="https://user-images.githubusercontent.com/4084738/216380769-b2461e9b-a78a-43a0-8317-43882a683d13.png" width="200"/>|
+| Main Screen                                                                                                                   | Menu Items                                                                                                                    | Toolbar Configuration                                                                                                         |
+|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| <img src="https://user-images.githubusercontent.com/4084738/216380150-dbac589a-175e-4ae6-9776-7cd0b219ae43.png" width="200"/> | <img src="https://user-images.githubusercontent.com/4084738/216380448-9b226f37-c30c-49fd-8242-3291bf82eaab.png" width="200"/> | <img src="https://user-images.githubusercontent.com/4084738/216380769-b2461e9b-a78a-43a0-8317-43882a683d13.png" width="200"/> |
