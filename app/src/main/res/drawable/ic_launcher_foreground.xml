@@ -4,12 +4,17 @@
     android:viewportWidth="143"
     android:viewportHeight="143"
     android:autoMirrored="true">
-  <group android:scaleX="0.47"
-      android:scaleY="0.47"
-      android:translateX="37.895"
-      android:translateY="37.895">
-      <path
-          android:pathData="M120.7,135.5H22.3c-8.2,0 -14.8,-6.6 -14.8,-14.8V22.3c0,-8.2 6.6,-14.8 14.8,-14.8h43c4,0 7.8,1.6 10.6,4.4l55.3,55.3c2.8,2.8 4.3,6.6 4.3,10.5v43C135.5,128.9 128.9,135.5 120.7,135.5z"
-          android:strokeColor="#000000" android:strokeWidth="15"/>
+  <group android:scaleX="0.7"
+      android:scaleY="0.7"
+      android:translateX="21.45"
+      android:translateY="21.45">
+    <group android:scaleX="0.47"
+        android:scaleY="0.47"
+        android:translateX="37.895"
+        android:translateY="37.895">
+        <path
+            android:pathData="M120.7,135.5H22.3c-8.2,0 -14.8,-6.6 -14.8,-14.8V22.3c0,-8.2 6.6,-14.8 14.8,-14.8h43c4,0 7.8,1.6 10.6,4.4l55.3,55.3c2.8,2.8 4.3,6.6 4.3,10.5v43C135.5,128.9 128.9,135.5 120.7,135.5z"
+            android:strokeColor="#000000" android:strokeWidth="15"/>
+    </group>
   </group>
 </vector>
