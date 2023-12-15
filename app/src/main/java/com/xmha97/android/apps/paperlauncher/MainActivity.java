@@ -21,6 +21,10 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import android.os.Bundle;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -32,36 +36,30 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        clockTextView = findViewById(R.id.clockTextView);
+        clockTextView = findViewById(R.id.textView1);
         handler = new Handler();
-
         handler.postDelayed(updateClockRunnable, 1000);
+
     }
 
     private Runnable updateClockRunnable = new Runnable() {
         @Override
         public void run() {
             updateClock();
-            // دوباره اجرای متد updateClock() هر یک ثانیه یکبار
             handler.postDelayed(this, 1000);
         }
     };
 
     private void updateClock() {
-        // دریافت تاریخ و زمان فعلی
         Date currentTime = new Date();
-        // تعیین قالب زمان برای نمایش به صورت ۲۴ ساعته
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
-        // تبدیل تاریخ به رشته بر اساس قالب مورد نظر
         String formattedTime = dateFormat.format(currentTime);
-        // نمایش زمان در TextView
         clockTextView.setText(formattedTime);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // حذف تمام Callback ها و اجرایی های انجام نشده از Handler
         handler.removeCallbacksAndMessages(null);
     }
 

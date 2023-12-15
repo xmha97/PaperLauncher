@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout android:id="@+id/tableLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:stretchColumns="0,1,2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableRow>
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="31sp"
-        android:layout_weight="1"
-        android:onClick="buttonClick"
-        android:background="@drawable/custom_button"
-        android:stateListAnimator="@null"
-        android:text="Test Menu" />
-
-    <TextView
-        android:id="@+id/clockTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="#000000"/>
-
-</LinearLayout>
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="100sp"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:gravity="center"
+                    android:textSize="24sp" />
+        </TableRow>
+        <TableRow>
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="241dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button"
+                    android:onClick="buttonClick"
+                    android:stateListAnimator="@null"
+                    android:text="Show Apps" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="241dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_button"
+                    android:onClick="buttonClick"
+                    android:stateListAnimator="@null"
+                    android:text="Show Settings" />
+        </TableRow>
+</TableLayout>
