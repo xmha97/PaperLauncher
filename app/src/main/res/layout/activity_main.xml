@@ -2,40 +2,53 @@
 <TableLayout android:id="@+id/tableLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:stretchColumns="0,1,2"
+    android:stretchColumns="*"
+    android:padding="30dip"
     xmlns:android="http://schemas.android.com/apk/res/android">
         <TableRow
             android:id="@+id/tableRow1"
             android:background="@drawable/custom_rectangle_shape">
-
                 <TextView
                     android:id="@+id/textView1"
                     android:layout_width="100sp"
                     android:layout_height="50sp"
                     android:text=""
+                    android:layout_span="2"
                     android:gravity="center"
                     android:textSize="24sp" />
         </TableRow>
-
-        <TableRow>
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_margin="30dip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_rectangle_shape">
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_span="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </TableRow>
+        <TableRow android:layout_height="50dp" android:id="@+id/tableRow3">
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="match_parent"
-                    android:layout_height="241dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
+                    android:layout_marginRight="15dip"
                     android:background="@drawable/custom_button"
                     android:onClick="buttonClick"
                     android:stateListAnimator="@null"
-                    android:text="Show Apps" />
+                    android:text="Refresh" />
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
-                    android:layout_height="241dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
+                    android:layout_marginLeft="15dip"
                     android:background="@drawable/custom_button"
                     android:onClick="buttonClick"
                     android:stateListAnimator="@null"
-                    android:text="Show Settings" />
+                    android:text="Settings" />
         </TableRow>
-
 </TableLayout>
